@@ -3,7 +3,7 @@
 Plugin Name: Taxman
 Plugin URI: http://github.com/ryanve/taxman
 Description: Extend existing taxonomies to other post types.
-Version: 0.1.2
+Version: 0.2.0
 Author: Ryan Van Etten
 Author URI: http://ryanve.com
 License: MIT
@@ -11,8 +11,8 @@ License: MIT
 
 add_action('init', function() {
     # Core types include: post page attachment revision nav_menu_item
-    # Consider: get_post_types, get_taxonomies, get_object_taxonomies
-    $types = apply_filters('plugin:taxman:types', array('page'));
+    # Related: get_post_types, get_taxonomies, get_object_taxonomies
+    $types = apply_filters('plugin:taxman:types', array_diff(get_post_types(), array('nav_menu_item', 'revision')));
     $taxos = apply_filters('plugin:taxman:taxos', array('post_tag', 'category'));
     if ( ! $types || ! $taxos)
         return;
