@@ -3,7 +3,7 @@
 Plugin Name: Taxman
 Plugin URI: http://github.com/ryanve/taxman
 Description: Add existing taxonomies all post types.
-Version: 0.2.0
+Version: 0.3.0
 Author: Ryan Van Etten
 Author URI: http://ryanve.com
 License: MIT
